@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Inventory System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Smart Inventory & Expiry Management</h1>
+
+<div class="stats">
+    <div>Total Items: {{ total }}</div>
+    <div class="warn">Expiring Soon: {{ expiring }}</div>
+    <div class="danger">Expired: {{ expired }}</div>
+</div>
+
+{% if expiring is defined and expiring > 0 %}
+<p class="alert">⚠ {{ expiring }} items are expiring soon!</p>
+{% endif %}
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Product name" required>
+    <input type="text" name="category" placeholder="Category" required>
+    <input type="number" name="quantity" placeholder="Quantity" required>
+    <input type="date" name="expiry" required>
+    <button>Add Product</button>
+</form>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Qty</th>
+        <th>Expiry</th>
+        <th>Status</th>
+        <th>Risk</th>
+        <th>AI Suggestion</th>
+        <th>Action</th>
+    </tr>
+
+    {% for p in products %}
+    <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.category }}</td>
+        <td>{{ p.quantity }}</td>
+        <td>{{ p.expiry }}</td>
+        <td class="{{ p.status }}">{{ p.status }}</td>
+        <td>{{ p.risk }}</td>
+        <td>{{ p.action }}</td>
+        <td><a href="/delete/{{ p.id }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
