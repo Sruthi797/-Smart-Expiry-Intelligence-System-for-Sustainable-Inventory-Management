@@ -1,0 +1,82 @@
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input, button {
+    padding: 8px;
+}
+
+button {
+    background: #2c7be5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.stats div {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.warn {
+    color: orange;
+}
+
+.danger {
+    color: red;
+}
+
+.alert {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.EXPIRED {
+    color: red;
+    font-weight: bold;
+}
+
+.EXPIRING\ SOON {
+    color: orange;
+    font-weight: bold;
+}
+
+.SAFE {
+    color: green;
+    font-weight: bold;
+}
